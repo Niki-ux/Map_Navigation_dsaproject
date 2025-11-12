@@ -1,4 +1,3 @@
-// Map navigations
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -259,11 +258,11 @@ int main() {
     cout << "  Finding shortest route by actual distance (Dijkstra)\n\n";
     cout << "---------------------------------------------\n";
     cout << "AVAILABLE LOCATIONS:\n";
-    cout << "  Hostels: I3, I2, B1–B6, G1–G6, Y3, Y4, O3, O4\n";
-    cout << "  Messes: Old_Mess, New_Mess\n";
-    cout << "  Other: Tapri, Shamiyana, Akaash_Complex, Football_Field, PHC\n";
+    cout << "  Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
+    cout << "  Messes: Old Mess, New Mess\n";
+    cout << "  Other: Tapri, Shamiyana, Akash Complex, Football Field, PHC\n";
     cout << "  LHCs: LHC1, LHC2\n";
-    cout << "  Departments: CSE, Electrical, Mech (Mechanical), Civil, Physics,\n";
+    cout << "  Departments: CSE, Electrical, Mechanical, Civil, Physics,\n";
     cout << "               Chemistry, Bio, Materials, Maths, SME, SOLA\n";
     cout << "---------------------------------------------\n";
     cout << "Press ENTER to continue to the main menu...";
@@ -280,7 +279,7 @@ int main() {
         cout << "4. List All Valid Node Names Again\n";
         cout << "5. Exit\n";
         cout << "===========================================\n";
-        cout << "Enter your choice (1–5): ";
+        cout << "Enter your choice (1-5): ";
 
         int opt;
         if (!(cin >> opt)) {
@@ -303,7 +302,7 @@ int main() {
             getline(cin, dst);
 
             if (!g.nodeExists(src) || !g.nodeExists(dst)) {
-                cout << "\n⚠️  Invalid name(s). Use option 4 to view valid nodes.\n";
+                cout << "\n  Invalid name(s). Use option 4 to view valid nodes.\n";
                 continue;
             }
 
@@ -312,7 +311,7 @@ int main() {
                 bool ok = g.bfs(src, dst, path);
                 if (!ok) cout << "No route found (BFS).\n";
                 else {
-                    cout << "\n📍 Shortest path (fewest turns):\n";
+                    cout << "\n Shortest path (fewest turns):\n";
                     printPath(path);
                     cout << "Total hops: " << (int)path.size() - 1 << "\n";
                 }
@@ -321,7 +320,7 @@ int main() {
                 bool ok = g.dijkstra(src, dst, totalDist, path);
                 if (!ok) cout << "No route found (Dijkstra).\n";
                 else {
-                    cout << "\n📍 Shortest route by distance:\n";
+                    cout << "\n Shortest route by distance:\n";
                     printPath(path);
                     cout << "Total Distance: " << fixed << setprecision(3) << totalDist << " km\n";
                 }
@@ -329,7 +328,7 @@ int main() {
         }
         else if (opt == 4) {
             cout << "\nVALID LOCATIONS:\n";
-            cout << "Hostels: I3, I2, B1–B6, G1–G6, Y3, Y4, O3, O4\n";
+            cout << "Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
             cout << "Messes: Old_Mess, New_Mess\n";
             cout << "Landmarks: Tapri, Shamiyana, Akaash_Complex, Football_Field, PHC\n";
             cout << "LHCs: LHC1, LHC2\n";
@@ -342,7 +341,7 @@ int main() {
             break;
         }
         else {
-            cout << "Invalid option. Please choose between 1–5.\n";
+            cout << "Invalid option. Please choose between 1-5.\n";
         }
     }
 
