@@ -201,35 +201,35 @@ CampusGraph buildCampusMap() {
     g.addEdge("Y3", "O4", 0.08);
     g.addEdge("O4", "O3", 0.07);
     g.addEdge("O3", "Akaash_Complex", 0.12);
-    g.addEdge("Akaash_Complex", "Football_Field", 0.10);
-    g.addEdge("Football_Field", "PHC", 0.08);
+    // g.addEdge("Akaash_Complex", "Football_Field", 0.10);
+    // g.addEdge("Football_Field", "PHC", 0.08);
 
     // Landmarks and academic area
-    g.addEdge("G6", "Tapri", 0.05);
-    g.addEdge("B6", "Tapri", 0.10);
-    g.addEdge("Tapri", "LHC1", 0.08);
-    g.addEdge("LHC1", "LHC2", 0.06);
-    g.addEdge("LHC1", "Chemistry", 0.07);
-    g.addEdge("Chemistry", "Physics", 0.06);
-    g.addEdge("Chemistry", "Bio", 0.06);
-    g.addEdge("Bio", "CSE", 0.08);
-    g.addEdge("CSE", "Maths", 0.07);
-    g.addEdge("Maths", "SME", 0.08);
-    g.addEdge("SME", "SOLA", 0.07);
-    g.addEdge("SOLA", "Shamiyana", 0.12);
-    g.addEdge("Shamiyana", "Civil", 0.10);
-    g.addEdge("Civil", "Mechanical", 0.08);
-    g.addEdge("Mechanical", "Electrical", 0.08);
-    g.addEdge("Electrical", "Materials", 0.09);
-    g.addEdge("Materials", "Physics", 0.10);
+    g.addEdge("G6", "Tapri", 0.30);
+    // g.addEdge("B6", "Tapri", 0.10);
+    g.addEdge("Tapri", "LHC1", 0.03);
+    g.addEdge("LHC1", "LHC2", 1.00);
+    g.addEdge("LHC1", "Chemistry", 0.20);
+    g.addEdge("Chemistry", "Physics", 0.50);
+    g.addEdge("Chemistry", "Bio", 0.01);
+    g.addEdge("Bio", "CSE", 0.06);
+    g.addEdge("CSE", "Maths", 0.70);
+    g.addEdge("Maths", "SME", 0.10);
+    g.addEdge("SME", "SOLA", 0.10);
+    g.addEdge("SOLA", "Shamiyana", 0.50);
+    g.addEdge("Shamiyana", "Civil", 0.40);
+    g.addEdge("Civil", "Mechanical", 0.01);
+    g.addEdge("Mechanical", "Electrical", 0.20);
+    g.addEdge("Electrical", "Materials", 0.10);
+    g.addEdge("Materials", "Physics", 0.20);
 
     // Some cross connections
-    g.addEdge("New_Mess", "LHC1", 0.18);
-    g.addEdge("B3", "Tapri", 0.12);
-    g.addEdge("G1", "LHC2", 0.20);
-    g.addEdge("O4", "Physics", 0.30);
-    g.addEdge("Old_Mess", "Shamiyana", 0.45);
-    g.addEdge("B1", "CSE", 0.55);
+    g.addEdge("New_Mess", "LHC1", 0.50);
+    g.addEdge("B3", "Tapri", 0.40);
+    g.addEdge("G1", "LHC2", 1.00);
+    g.addEdge("O4", "Physics", 0.90);
+    g.addEdge("Old_Mess", "Shamiyana", 0.90);
+    g.addEdge("B1", "CSE", 0.40);
 
     return g;
 }
@@ -260,7 +260,7 @@ int main() {
     cout << "AVAILABLE LOCATIONS:\n";
     cout << "  Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
     cout << "  Messes: Old Mess, New Mess\n";
-    cout << "  Other: Tapri, Shamiyana, Akash Complex, Football Field, PHC\n";
+    cout << "  Other: Tapri, Shamiyana, Akash Complex, PHC\n";
     cout << "  LHCs: LHC1, LHC2\n";
     cout << "  Departments: CSE, Electrical, Mechanical, Civil, Physics,\n";
     cout << "               Chemistry, Bio, Materials, Maths, SME, SOLA\n";
@@ -313,7 +313,9 @@ int main() {
                 else {
                     cout << "\n Shortest path (fewest turns):\n";
                     printPath(path);
-                    cout << "Total hops: " << (int)path.size() - 1 << "\n";
+                    cout << "Total hops: ";
+                    cout << (int)path.size() - 1 ;
+                    cout << "\n";
                 }
             } else {
                 double totalDist = 0.0;
@@ -322,7 +324,11 @@ int main() {
                 else {
                     cout << "\n Shortest route by distance:\n";
                     printPath(path);
-                    cout << "Total Distance: " << fixed << setprecision(3) << totalDist << " km\n";
+                    cout << "Total Distance: ";
+                    cout << fixed ;
+                    cout << setprecision(3);
+                    cout << totalDist;
+                    cout << " km\n";
                 }
             }
         }
@@ -330,18 +336,18 @@ int main() {
             cout << "\nVALID LOCATIONS:\n";
             cout << "Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
             cout << "Messes: Old_Mess, New_Mess\n";
-            cout << "Landmarks: Tapri, Shamiyana, Akaash_Complex, Football_Field, PHC\n";
+            cout << "Landmarks: Tapri, Shamiyana, Akaash_Complex, PHC\n";
             cout << "LHCs: LHC1, LHC2\n";
             cout << "Departments: CSE, Electrical, Mech, Civil, Physics, Chemistry, Bio,\n";
             cout << "             Materials, Maths, SME, SOLA\n";
         }
         else if (opt == 5) {
-            cout << "\nThank you for using IIT Jodhpur Campus Navigator!\n";
+            cout << "\nThank you for using IIT Jodhpur Campus Navigator!\n\n";
             g.cleanup();
             break;
         }
         else {
-            cout << "Invalid option. Please choose between 1-5.\n";
+            cout << "-----Invalid option. Please choose between 1-5.-----\n\n";
         }
     }
 
