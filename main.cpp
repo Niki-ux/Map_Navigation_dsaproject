@@ -1,4 +1,4 @@
-// Map navigation
+// Map navigations
 #include <bits/stdc++.h>
 using namespace std;
 
