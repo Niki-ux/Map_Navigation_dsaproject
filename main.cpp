@@ -44,7 +44,7 @@ public:
     }
 
     void displayMap() {
-        cout << "\n📍 Campus Adjacency Lists (Each adjacency list shows connected locations):\n";
+        cout << "\n Campus Adjacency Lists (Each adjacency list shows connected locations):\n";
         for (auto &v : vertices) {
             cout << "  " << v << " -> ";
             AdjNode* cur = adjHeads[v];
@@ -57,7 +57,7 @@ public:
             }
             cout << "\n";
         }
-        cout << "\n✅ Map displayed successfully.\n";
+        cout << "\n Map displayed successfully.\n";
     }
 
     bool bfs(const string& src, const string& dest, vector<string>& path) {
