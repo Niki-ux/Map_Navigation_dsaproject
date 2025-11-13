@@ -222,6 +222,8 @@ CampusGraph buildCampusMap() {
     // g.addEdge("G6", "Tapri", 0.30);
      g.addEdge("CSE", "Basic_Lab", 0.1);
      g.addEdge("Tapri", "LHC1", 2);
+     g.addEdge("Tapri", "I2", 2);
+     g.addEdge("Tapri", "B1", 2);
      g.addEdge("Maths", "LHC2", 0.1);
      g.addEdge("Civil", "Chemistry", 8);
      g.addEdge("Bio", "Shamiyana", 5);
@@ -359,7 +361,7 @@ int main() {
             cout << "\nVALID LOCATIONS:\n";
             cout << "Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
             cout << "Messes: Old_Mess, New_Mess\n";
-            cout << "Landmarks: Tapri, Shamiyana, Akaash_Complex, PHC\n";
+            cout << "Landmarks: Tapri, Shamiyana, Akaash_Complex\n";
             cout << "LHCs: LHC1, LHC2\n";
             cout << "Departments: CSE, Electrical, Mech, Civil, Physics, Chemistry, Bio,\n";
             cout << "             Materials, Maths, SME, SOLA\n";
