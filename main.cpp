@@ -1,21 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* -----------------------------------------------------------
-   IIT Jodhpur Campus Navigation System (Graph + Linked Lists)
-   -----------------------------------------------------------
-   Features:
-   • Hostels, Messes, Departments, and Landmarks as Nodes
-   • Adjacency List built using Linked Lists
-   • BFS → Shortest path by number of hops
-   • Dijkstra → Shortest route by total distance
------------------------------------------------------------ */
-
 struct AdjNode {
-    string neighbor;
+    string neighbour;
     double dist;
     AdjNode* next;
-    AdjNode(const string& n, double d) : neighbor(n), dist(d), next(nullptr) {}
+    AdjNode(const string& n, double d) : neighbour(n), dist(d), next(nullptr) {}
 };
 
 class CampusGraph {
@@ -51,7 +41,7 @@ public:
             bool first = true;
             while (cur) {
                 if (!first) cout << ", ";
-                cout << cur->neighbor << "(" << cur->dist << " km)";
+                cout << cur->neighbour << "(" << cur->dist << " km)";
                 first = false;
                 cur = cur->next;
             }
@@ -83,7 +73,7 @@ public:
             if (u == dest) break;
 
             for (AdjNode* cur = adjHeads[u]; cur; cur = cur->next) {
-                string v = cur->neighbor;
+                string v = cur->neighbour;
                 if (!visited[v]) {
                     visited[v] = true;
                     parent[v] = u;
@@ -137,7 +127,7 @@ public:
             if (u == dest) break;
 
             for (AdjNode* cur = adjHeads[u]; cur; cur = cur->next) {
-                string v = cur->neighbor;
+                string v = cur->neighbour;
                 double w = cur->dist;
                 if (!visited[v] && dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;
@@ -202,8 +192,6 @@ CampusGraph buildCampusMap() {
      g.addEdge("O4", "O3", 1.03);
      g.addEdge("O3", "Akaash_Complex", 10);
      g.addEdge("Shamiyana", "Akaash_Complex", 14);
-    // // g.addEdge("Akaash_Complex", "Football_Field", 0.10);
-    // // g.addEdge("Football_Field", "PHC", 0.08);
     g.addEdge("B1","G6",1);
     // g.addEdge("B3","B2",1);
      g.addEdge("B1","B5",0.01);
