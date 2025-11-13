@@ -180,56 +180,74 @@ public:
 CampusGraph buildCampusMap() {
     CampusGraph g;
 
-    // Hostel rows & connections
-    g.addEdge("I3", "I2", 0.06);
-    g.addEdge("I2", "Old_Mess", 0.05);
-    g.addEdge("Old_Mess", "B4", 0.06);
-    g.addEdge("B4", "B5", 0.05);
-    g.addEdge("B5", "B6", 0.05);
-    g.addEdge("B5", "B3", 0.07);
-    g.addEdge("B3", "B2", 0.05);
-    g.addEdge("B2", "B1", 0.05);
-    g.addEdge("B2", "New_Mess", 0.06);
-    g.addEdge("New_Mess", "G4", 0.05);
-    g.addEdge("G4", "G5", 0.05);
-    g.addEdge("G5", "G6", 0.05);
-    g.addEdge("G5", "G3", 0.06);
-    g.addEdge("G3", "G2", 0.05);
-    g.addEdge("G2", "G1", 0.05);
-    g.addEdge("G1", "Y4", 0.08);
-    g.addEdge("Y4", "Y3", 0.07);
-    g.addEdge("Y3", "O4", 0.08);
-    g.addEdge("O4", "O3", 0.07);
-    g.addEdge("O3", "Akaash_Complex", 0.12);
-    // g.addEdge("Akaash_Complex", "Football_Field", 0.10);
-    // g.addEdge("Football_Field", "PHC", 0.08);
-
-    // Landmarks and academic area
-    g.addEdge("G6", "Tapri", 0.30);
-    // g.addEdge("B6", "Tapri", 0.10);
-    g.addEdge("Tapri", "LHC1", 0.03);
-    g.addEdge("LHC1", "LHC2", 1.00);
-    g.addEdge("LHC1", "Chemistry", 0.20);
-    g.addEdge("Chemistry", "Physics", 0.50);
-    g.addEdge("Chemistry", "Bio", 0.01);
-    g.addEdge("Bio", "CSE", 0.06);
-    g.addEdge("CSE", "Maths", 0.70);
-    g.addEdge("Maths", "SME", 0.10);
-    g.addEdge("SME", "SOLA", 0.10);
-    g.addEdge("SOLA", "Shamiyana", 0.50);
-    g.addEdge("Shamiyana", "Civil", 0.40);
-    g.addEdge("Civil", "Mechanical", 0.01);
-    g.addEdge("Mechanical", "Electrical", 0.20);
-    g.addEdge("Electrical", "Materials", 0.10);
-    g.addEdge("Materials", "Physics", 0.20);
-
-    // Some cross connections
-    g.addEdge("New_Mess", "LHC1", 0.50);
-    g.addEdge("B3", "Tapri", 0.40);
-    g.addEdge("G1", "LHC2", 1.00);
-    g.addEdge("O4", "Physics", 0.90);
-    g.addEdge("Old_Mess", "Shamiyana", 0.90);
-    g.addEdge("B1", "CSE", 0.40);
+    // // Hostel rows & connections
+     g.addEdge("I3", "I2", 1);
+    // g.addEdge("I2", "Old_Mess", 0.05);
+     g.addEdge("Old_Mess", "B4", 1);
+     g.addEdge("B4", "B5", 1);
+    // g.addEdge("B5", "B6", 0.05);
+    // g.addEdge("B5", "B3", 0.07);
+     g.addEdge("B3", "B2", 1);
+     g.addEdge("B2", "B1", 1);
+    // g.addEdge("B2", "New_Mess", 0.06);
+     g.addEdge("New_Mess", "G4", 0.5);
+     g.addEdge("G4", "G5", 0.5);
+     g.addEdge("G5", "G6", 1);
+    // g.addEdge("G5", "G3", 0.06);
+    // g.addEdge("G3", "G2", 0.05);
+     g.addEdge("G2", "G1", 1);
+    // g.addEdge("G1", "Y4", 0.08);
+     g.addEdge("Y4", "Y3", 1.03);
+     g.addEdge("Y3", "O4", 2);
+     g.addEdge("O4", "O3", 1.03);
+     g.addEdge("O3", "Akaash_Complex", 10);
+    // // g.addEdge("Akaash_Complex", "Football_Field", 0.10);
+    // // g.addEdge("Football_Field", "PHC", 0.08);
+    // g.addEdge("B1","B2",1);
+    // g.addEdge("B3","B2",1);
+     g.addEdge("B1","B5",0.01);
+     g.addEdge("B4","B2",0.01);
+     g.addEdge("OldMess","B3",0.01);
+    // g.addEdge("OldMess","B4",1);
+     g.addEdge("OldMess","I3",2);
+    // g.addEdge("I3","I2",1);
+     g.addEdge("I2","Library",5);
+     g.addEdge("Library","Lhc1",2.5);
+     g.addEdge("Lhc1","B1",4);
+    
+    // // Landmarks and academic area
+    // g.addEdge("G6", "Tapri", 0.30);
+     g.addEdge("CSE", "Basic_Lab", 0.1);
+     g.addEdge("Tapri", "LHC1", 2);
+     g.addEdge("Maths", "LHC2", 0.1);
+     g.addEdge("Civil", "Chemistry", 8);
+     g.addEdge("Chemistry", "Shamiyana", 5);
+     g.addEdge("Chemistry", "Bio", 1);
+     g.addEdge("Bio", "CSE", 1);
+     g.addEdge("LHC1", "CSE", 4);
+     g.addEdge("Maths", "SME", 3);
+     g.addEdge("SME", "SOLA", 2);
+     g.addEdge("G2", "G5", 0.01);
+     g.addEdge("Shamiyana", "Civil", 5);
+     g.addEdge("Civil", "Mechanical", 1);
+     g.addEdge("Mechanical", "Electrical", 1);
+     g.addEdge("Electrical", "Materials", 2);
+     g.addEdge("Materials", "Physics", 1);
+     g.addEdge("Electrical", "Physics", 1);
+     
+    g.addEdge("Civil", "Mechanical", 1);
+    g.addEdge("Civil", "Electrical", 1);
+    g.addEdge("Electrical", "Materials", 2);
+    g.addEdge("Materials", "Physics", 1);
+    g.addEdge("SOLA", "Physics", 1);
+     
+    // // Some cross connections
+     g.addEdge("New_Mess", "G3", 1);
+     g.addEdge("O3", "Y3", 2);
+     g.addEdge("G3", "Y3", 2);
+     g.addEdge("New_Mess", "B3", 1);
+     g.addEdge("G1", "G6", 0.01);
+     g.addEdge("G1", "G2", 1);
 
     return g;
 }
