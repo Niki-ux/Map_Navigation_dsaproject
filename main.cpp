@@ -203,17 +203,19 @@ CampusGraph buildCampusMap() {
      g.addEdge("O3", "Akaash_Complex", 10);
     // // g.addEdge("Akaash_Complex", "Football_Field", 0.10);
     // // g.addEdge("Football_Field", "PHC", 0.08);
-    // g.addEdge("B1","B2",1);
+    g.addEdge("B1","G6",1);
     // g.addEdge("B3","B2",1);
      g.addEdge("B1","B5",0.01);
      g.addEdge("B4","B2",0.01);
-     g.addEdge("OldMess","B3",0.01);
+     g.addEdge("Old_Mess","B3",0.01);
     // g.addEdge("OldMess","B4",1);
-     g.addEdge("OldMess","I3",2);
+     g.addEdge("Old_Mess","I3",2);
     // g.addEdge("I3","I2",1);
      g.addEdge("I2","Library",5);
-     g.addEdge("Library","Lhc1",2.5);
-     g.addEdge("Lhc1","B1",4);
+     g.addEdge("Library","LHC1",2.5);
+     g.addEdge("LHC1","G6",4);
+     g.addEdge("LHC1","G1",4);
+     g.addEdge("LHC1","B1",4);
     
     // // Landmarks and academic area
     // g.addEdge("G6", "Tapri", 0.30);
@@ -221,28 +223,29 @@ CampusGraph buildCampusMap() {
      g.addEdge("Tapri", "LHC1", 2);
      g.addEdge("Maths", "LHC2", 0.1);
      g.addEdge("Civil", "Chemistry", 8);
-     g.addEdge("Chemistry", "Shamiyana", 5);
+     g.addEdge("Bio", "Shamiyana", 5);
      g.addEdge("Chemistry", "Bio", 1);
      g.addEdge("Bio", "CSE", 1);
      g.addEdge("LHC1", "CSE", 4);
      g.addEdge("Maths", "SME", 3);
+     g.addEdge("SOLA", "Maths", 1);
      g.addEdge("SME", "SOLA", 2);
      g.addEdge("G2", "G5", 0.01);
      g.addEdge("Shamiyana", "Civil", 5);
      g.addEdge("Civil", "Mechanical", 1);
      g.addEdge("Mechanical", "Electrical", 1);
-     g.addEdge("Electrical", "Materials", 2);
-     g.addEdge("Materials", "Physics", 1);
+    //  g.addEdge("Electrical", "Materials", 2);
+    //  g.addEdge("Materials", "Physics", 1);
      g.addEdge("Electrical", "Physics", 1);
-     
+     g.addEdge("SME", "Materials", 1);
     g.addEdge("Civil", "Mechanical", 1);
     g.addEdge("Civil", "Electrical", 1);
-    g.addEdge("Electrical", "Materials", 2);
+    // g.addEdge("Electrical", "Materials", 2);
     g.addEdge("Materials", "Physics", 1);
     g.addEdge("SOLA", "Physics", 1);
      
     // // Some cross connections
-     g.addEdge("New_Mess", "G3", 1);
+     g.addEdge("New_Mess", "G3", 0.01);
      g.addEdge("O3", "Y3", 2);
      g.addEdge("G3", "Y3", 2);
      g.addEdge("New_Mess", "B3", 1);
@@ -278,9 +281,9 @@ int main() {
     cout << "AVAILABLE LOCATIONS:\n";
     cout << "  Hostels: I3, I2, B1-B6, G1-G6, Y3, Y4, O3, O4\n";
     cout << "  Messes: Old Mess, New Mess\n";
-    cout << "  Other: Tapri, Shamiyana, Akash Complex, PHC\n";
+    cout << "  Other: Tapri, Shamiyana, Akash Complex, PHC, Library\n";
     cout << "  LHCs: LHC1, LHC2\n";
-    cout << "  Departments: CSE, Electrical, Mechanical, Civil, Physics,\n";
+    cout << "  Departments: Basic_Lab, CSE, Electrical, Mechanical, Civil, Physics,\n";
     cout << "               Chemistry, Bio, Materials, Maths, SME, SOLA\n";
     cout << "---------------------------------------------\n";
     cout << "Press ENTER to continue to the main menu...";
