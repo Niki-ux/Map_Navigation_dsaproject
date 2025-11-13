@@ -3,7 +3,6 @@
 # IIT Jodhpur Campus Navigator (Graph + Linked Lists)
 
 This is a console-based Campus Navigation System that models the IIT Jodhpur campus as a weighted graph using linked list–based adjacency lists.
-
 The program helps users explore campus routes, find the shortest paths between locations, and understand how graph algorithms like BFS and Dijkstra’s Algorithm work in practice.
 
 
