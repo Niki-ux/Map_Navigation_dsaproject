@@ -36,9 +36,14 @@ Implementation: Linked List–based Adjacency List
 
 ->Dijkstra’s Algorithm - Finds shortest route based on distance - Weighted shortest path
 
-Concepts Demonstrated
+# Concepts Demonstrated
+
 ->Graph representation using linked lists
+
 ->Use of STL containers (map, queue, priority_queue)
+
 ->Path reconstruction using parent maps
+
 ->Menu-driven program design
+
 ->Input validation and exception handling
